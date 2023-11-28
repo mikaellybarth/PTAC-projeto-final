@@ -4,10 +4,12 @@ import '../style.css';
 
 export default function ToDo() {
    const listaVideoLocalStorage = JSON.parse( localStorage.getItem ("listaVideo")) || [];
-   const [produto, setProduto ] = useState("");
-   const [marca, setMarca ] = useState("");
-   const [preco, setPreco ] = useState("");
-   const [img, setImg ] = useState("");
+   const [nomeDorama, setNomeDorama ] = useState("");
+   const [linkDorama, setLinkDorama ] = useState("");
+   const [quantTemporadaDorama, setQuantTemporadaDorama ] = useState("");
+   const [generoDorama, setGeneroDorama ] = useState("");
+   const [autora, setAutora ] = useState("");
+   const [quantEpDorama, setQuantEpDorama ] = useState("");
    const [listaVideo, setListaVideo ] = useState(listaVideoLocalStorage );
    const [id,setId] = useState(listaVideoLocalStorage[listaVideoLocalStorage.length - 1]?.id + 1 || 1);
 
@@ -15,15 +17,17 @@ export default function ToDo() {
 
     const salvar =(e) =>{
         e.preventDefault();
-        setLista([...listaVideo, {
-                produto: produto, marca:marca, preco:preco, img: img,
+        setListaVideo([...listaVideo, {
+            nomeDorama: nomeDorama, linkDorama: linkDorama, quantTemporadaDorama:quantTemporadaDorama, generoDorama: generoDorama, autora:autora, quantEpDorama:quantEpDorama,
                 id: id
         }]);
         setId(id + 1);
-        setProduto("");
-        setMarca("");
-        setPreco("");
-        setImg("");
+        setNomeDorama("");
+        setLinkDorama("");
+        setQuantTemporadaDorama("");
+        setGeneroDorama("");
+        setAutora("");
+        setQuantEpDorama("");
     };
 
     const excluir = (id) => {
@@ -44,21 +48,29 @@ export default function ToDo() {
             <h1 class = "titulo">Produtos Petshop</h1>    
             <form onSubmit={salvar}>
            
-            <p class = "nome">Produto:</p>
-            <input value={produto} type="text"
-            onChange={(e)=>{ setProduto(e.target.value)}}/>
+            <p class = "nome">Nome do Dorama:</p>
+            <input value={nomeDorama} type="text"
+            onChange={(e)=>{ setNomeDorama(e.target.value)}}/>
             
-           <p class = "nome">Marca do produto:</p>
-           <input value={marca} type="text"
-            onChange={(e)=>{ setMarca(e.target.value)}}/>
+           <p class = "nome">Link do Dorama:</p>
+           <input value={linkDorama} type="text"
+            onChange={(e)=>{ setLinkDorama(e.target.value)}}/>
            
-           <p class= "nome">Valor do produto:</p>
-           <input value={preco} type="number"
-            onChange={(e)=>{ setPreco(e.target.value)}}/>
+           <p class= "nome">Quant/Temporada do Dorama:</p>
+           <input value={quantTemporadaDorama} type="number"
+            onChange={(e)=>{ setQuantTemporadaDorama(e.target.value)}}/>
 
-           <p class = "nome"> img:</p>
-           <input value={img} type="text"
-            onChange={(e)=>{ setImg(e.target.value)}}/>
+           <p class = "nome"> Genero do Dorama:</p>
+           <input value={generoDorama} type="text"
+            onChange={(e)=>{ setGeneroDorama(e.target.value)}}/>
+
+           <p class = "nome"> Autora:</p>
+           <input value={autora} type="text"
+            onChange={(e)=>{ setAutora(e.target.value)}}/>
+
+           <p class = "nome"> Quant/Ep do Dorama:</p>
+           <input value={quantEpDorama} type="text"
+            onChange={(e)=>{ setQuantEpDorama(e.target.value)}}/>
 
             <button class = "button">ADD</button>   
             </form>   
@@ -70,7 +82,7 @@ export default function ToDo() {
                     <p>{objeto.produto}</p>
                 </Link>
                 
-                <img src= {objeto.img}alt="" class = "img" />
+                <img src= {objeto.linkDorama}alt="" class = "linkDorama" />
                 <p class = "name">Produto:{objeto.produto}</p>
                 <p class = "name"> Marca:{objeto.marca}</p>
                 <p class = "name"> R$:{objeto.preco}</p>
