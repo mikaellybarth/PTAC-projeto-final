@@ -7,7 +7,7 @@ import Menu from "./Componentes/Menu";
 export default function Home(){
     return(
        <div>
-      <Header/>
+         <Header/>
       <Card/>
       <Menu/>
        </div>

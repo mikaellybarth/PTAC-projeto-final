@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import Card from './Componentes/card';
+import Card from './Componentes/Card';
 
 export default function detalhe (){
     const { id } = useParams();
