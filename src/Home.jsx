@@ -1,8 +1,15 @@
-import {link} from "react-router-dom";
+import {Link} from "react-router-dom";
 import Header from "./Componentes/Header";
+import Card from "./Componentes/Header";
+import Menu from "./Componentes/Header";
+
 
 export default function Home(){
     return(
-        <h1>PTAC 2 - PROJETO FINAL</h1>
+       <div>
+      <Header/>
+      <Card/>
+      <Menu/>
+       </div>
      );
 }
