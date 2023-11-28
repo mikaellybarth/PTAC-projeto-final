@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 import Header from "./Componentes/Header";
-import Card from "./Componentes/Header";
-import Menu from "./Componentes/Header";
+import Card from "./Componentes/Card";
+import Menu from "./Componentes/Menu";
 
 
 export default function Home(){
