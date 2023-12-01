@@ -5,7 +5,7 @@ export default function Card ({listaVideos}) {
 
     return(
 
-       listaVideos.map((Cadastro) =>
+       listaVideos.map((cadastro) =>
         <div className = "card">
            <iframe
            width= "853"

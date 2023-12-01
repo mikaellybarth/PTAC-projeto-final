@@ -6,10 +6,11 @@ import Card from "./Componentes/Card";
 
 
 export default function Home(){
+  const listaVideoLocalStorage = JSON.parse( localStorage.getItem ("listaVideo")) || [];
     return(
       <div>
       <Header/>
-      <Card listaVideos = {objeto}/>
+       <Card listaVideos = {listaVideoLocalStorage} />
       </div>
      );
 }
