@@ -1,15 +1,13 @@
 import {Link} from "react-router-dom";
+import React from "react";
 import Header from "./Componentes/Header";
-import Card from "./Componentes/Card";
-import Menu from "./Componentes/Menu";
+
 
 
 export default function Home(){
     return(
-       <div>
-         <Header/>
-      <Card/>
-      <Menu/>
-       </div>
+      <div>
+      <Header/>
+      </div>
      );
 }

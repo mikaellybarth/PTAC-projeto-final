@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import '../style.css';
 
-export default function ToDo() {
+export default function Cadastro() {
    const listaVideoLocalStorage = JSON.parse( localStorage.getItem ("listaVideo")) || [];
    const [nomeDorama, setNomeDorama ] = useState("");
    const [linkDorama, setLinkDorama ] = useState("");
