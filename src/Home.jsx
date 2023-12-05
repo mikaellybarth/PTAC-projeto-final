@@ -5,14 +5,15 @@ import Header from "./Componentes/Header";
 import Card from "./Componentes/Card";
 
 
+const lista = JSON.parse( localStorage.getItem ("ListaVideo")) || [];
 
 export default function Home(){
-  const listaVideoLocalStorage = JSON.parse( localStorage.getItem ("listaVideo")) || [];
+
     return(
       <div>
         
       <Header/>
-       <Card listaVideos = {listaVideoLocalStorage} />
+       <Card listaVideo = {lista} />
       </div>
      );
 }

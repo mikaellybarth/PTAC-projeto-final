@@ -1,20 +1,26 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import '../style.css'
 
-export default function Card ({listaVideos}) {
-
+export default function Card ({listaVideo}) {
+ 
     return(
 
-       listaVideos.map((cadastro) =>
-        <div className = "card">
+       listaVideo.map((cadastro) =>
+       
+        <div className = "card" key={cadastro.id}>
            <iframe
-           width= "853"
-           height= "480"
-           onScroll={
-            'https://www.youtube.com/embed/' + cadastro.url.slice(17)}
-            frameborder ="0"
-            allow = "accelerometer; autoplay; clipboard-write;">
+        width="853"
+        height="480"
+           src={
+            'https://youtube.com/embed/' + cadastro.linkDorama.slice(17)}
+   
+            >
             </iframe>
+            <p>{cadastro.NomeDorama}</p>
+            <p>{cadastro.QuantTemporadaDorama}</p>
+            <p>{cadastro.Autora}</p>
+            <p>{cadastro.QuantEpDorama}</p>
+         
            
         </div>
         

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import '../style.css';
 
 export default function Cadastro() {
-   const listaVideoLocalStorage = JSON.parse( localStorage.getItem ("listaVideo")) || [];
+   const listaVideoLocalStorage = JSON.parse( localStorage.getItem ("ListaVideo")) || [];
    const [nomeDorama, setNomeDorama ] = useState("");
    const [linkDorama, setLinkDorama ] = useState("");
    const [quantTemporadaDorama, setQuantTemporadaDorama ] = useState("");
@@ -14,6 +14,7 @@ export default function Cadastro() {
    const [id,setId] = useState(listaVideoLocalStorage[listaVideoLocalStorage.length - 1]?.id + 1 || 1);
 
    useEffect (() => { localStorage.setItem("ListaVideo", JSON.stringify(listaVideo))}, [listaVideo]);
+ 
 
     const salvar =(e) =>{
         e.preventDefault();
@@ -30,17 +31,8 @@ export default function Cadastro() {
         setQuantEpDorama("");
     };
 
-    const excluir = (id) => {
-    const excluirListaVideo = [];
-    listaVideo.map ((listaVideo) =>{
-    if(listaVideo.id !==id){
-        excluirListaVideo.push(listaVideo);
-    }
-    });
-    setListaVideo(excluirListaVideo)
-     
-    }
-
+console.log(listaVideo)
+    
 
     return (
         <div class = "center">
@@ -72,23 +64,10 @@ export default function Cadastro() {
            <input value={quantEpDorama} type="text"
             onChange={(e)=>{ setQuantEpDorama(e.target.value)}}/>
 
+           
             <button class = "button">ADD</button>   
             </form>   
-               
-            {listaVideo.map((objeto)=>
-            <div class= "card" key = {objeto.id}>
-
-                <Link to={`/detalhe/${objeto.id}`}>
-                    <p>{objeto.produto}</p>
-                </Link>
-                
-                <img src= {objeto.linkDorama}alt="" class = "linkDorama" />
-                <p class = "name">Produto:{objeto.produto}</p>
-                <p class = "name"> Marca:{objeto.marca}</p>
-                <p class = "name"> R$:{objeto.preco}</p>
-                <button class = "button" onClick={()=> excluir(objeto.id)}>ExcluirProduto</button>
-            </div>
-            )} 
         </div>
+        
     );
 }
