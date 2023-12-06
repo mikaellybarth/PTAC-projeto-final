@@ -5,7 +5,7 @@ import Header from "./Componentes/Header";
 import Card from "./Componentes/Card";
 
 
-const lista = JSON.parse( localStorage.getItem ("ListaVideo")) || [];
+const listaVideo = JSON.parse( localStorage.getItem ("ListaVideo")) || [];
 
 export default function Home(){
 
@@ -13,7 +13,7 @@ export default function Home(){
       <div>
         
       <Header/>
-       <Card listaVideo = {lista} />
+       <Card listaVideo = {listaVideo} />
       </div>
      );
 }

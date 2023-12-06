@@ -1,22 +1,38 @@
 import { useParams } from "react-router-dom"
-import Card from './Componentes/Card';
+
 
 export default function detalhe (){
     const { id } = useParams();
     const lista = JSON.parse(localStorage.getItem("Lista"));
     
-   const produto = lista.filter((objeto)=>{
+   const cadastro = lista.filter((objeto)=>{
         if(objeto.id == id){
                   return objeto;
         }
         return null;
     })
 
-    console.log(produto[0])
+  
 
     return(
+        cadastro.map((cadastro) =>
         <div>
-           <Card produto={produto[0] } />
+          <div className = "card" key={cadastro.id}>
+           <iframe
+        width="853"
+        height="480"
+           src={
+            'https://youtube.com/embed/' + cadastro.linkDorama.slice(17)}
+   
+            >
+            </iframe>
+            <p>{cadastro.NomeDorama}</p>
+            <p>{cadastro.QuantTemporadaDorama}</p>
+            <p>{cadastro.Autora}</p>
+            <p>{cadastro.QuantEpDorama}</p>
+         
+           
         </div>
-    )
+        </div>
+    ))
 } 

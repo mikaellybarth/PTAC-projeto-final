@@ -16,10 +16,11 @@ export default function Card ({listaVideo}) {
    
             >
             </iframe>
-            <p>{cadastro.NomeDorama}</p>
-            <p>{cadastro.QuantTemporadaDorama}</p>
-            <p>{cadastro.Autora}</p>
-            <p>{cadastro.QuantEpDorama}</p>
+            <Link to={`/Detalhe/${cadastro.id}`}><p>{cadastro.nomeDorama}</p></Link>
+            
+            <p>{cadastro.quantTemporadaDorama}</p>
+            <p>{cadastro.autora}</p>
+            <p>{cadastro.quantEpDorama}</p>
          
            
         </div>
