@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 
 export default function detalhe (){
     const { id } = useParams();
-    const lista = JSON.parse(localStorage.getItem("Lista"));
+    const lista = JSON.parse(localStorage.getItem("ListaVideo"));
     
    const cadastro = lista.filter((objeto)=>{
         if(objeto.id == id){
