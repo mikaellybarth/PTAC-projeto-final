@@ -21,6 +21,7 @@ export default function Card ({listaVideo}) {
             <p>{cadastro.quantTemporadaDorama}</p>
             <p>{cadastro.autora}</p>
             <p>{cadastro.quantEpDorama}</p>
+            <p>{cadastro.generoDorama}</p>
          
            
         </div>

@@ -27,10 +27,11 @@ export default function detalhe (){
             >
               
             </iframe>
-            <p>{cadastro.NomeDorama}</p>
-            <p>{cadastro.QuantTemporadaDorama}</p>
-            <p>{cadastro.Autora}</p>
-            <p>{cadastro.QuantEpDorama}</p>
+            <p>{cadastro.nomeDorama}</p>
+            <p>{cadastro.quantTemporadaDorama}</p>
+            <p>{cadastro.autora}</p>
+            <p>{cadastro.quantEpDorama}</p>
+            <p>{cadastro.generoDorama}</p>
          
            
         </div>
