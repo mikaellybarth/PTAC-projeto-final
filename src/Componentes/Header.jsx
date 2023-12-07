@@ -11,8 +11,7 @@ export default function Header(){
             <div className="navbar-nav">
               <a className="nav-link active" aria-current="page" href="/destaque">Destaque</a>
               <a className="nav-link" href="/cadastro">Cadastrar</a>
-              <a className="nav-link" href="#">Pricing</a>
-              <a className="nav-link" href="#">Pricing</a>
+              <a className="nav-link" href="/detalhe">Detalhe</a>
             </div>
           </div>
         </div>

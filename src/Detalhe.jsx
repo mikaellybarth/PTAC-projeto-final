@@ -25,6 +25,7 @@ export default function detalhe (){
             'https://youtube.com/embed/' + cadastro.linkDorama.slice(17)}
    
             >
+              
             </iframe>
             <p>{cadastro.NomeDorama}</p>
             <p>{cadastro.QuantTemporadaDorama}</p>
