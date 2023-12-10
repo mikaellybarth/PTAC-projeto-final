@@ -14,8 +14,9 @@ export default function Cadastro() {
    const [id,setId] = useState(listaVideoLocalStorage[listaVideoLocalStorage.length - 1]?.id + 1 || 1);
 
    useEffect (() => { localStorage.setItem("ListaVideo", JSON.stringify(listaVideo))}, [listaVideo]);
+ 
 
-   const navigate = useNavigate();
+   //const navigate = useNavigate();
  
 
     const salvar =(e) =>{
@@ -31,10 +32,11 @@ export default function Cadastro() {
         setGeneroDorama("");
         setAutora("");
         setQuantEpDorama("");
-        navigate("/")
+       // navigate("/")
+        console.log(nomeDorama)
     };
 
-console.log(listaVideo)
+
     
 
     return (
