@@ -2,9 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './Home'
-import Card from './Componentes/Card';
 import Detalhe from './Detalhe'
 import Cadastro from './Cadastro/Cadastro'
+import Destaque from './Destaque';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/" element={<Home />}></Route>
         <Route path="/Cadastro" element={<Cadastro />}></Route>
         <Route path='/Detalhe/:id' element={<Detalhe />}></Route>
-        <Route path='/Componentes' element={<Card />}></Route>
+        <Route path='/Destaque' element={<Destaque />}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

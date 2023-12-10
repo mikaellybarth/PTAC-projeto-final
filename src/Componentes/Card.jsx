@@ -12,9 +12,7 @@ export default function Card ({listaVideo}) {
         width="853"
         height="480"
            src={
-            'https://youtube.com/embed/' + cadastro.linkDorama.slice(17)}
-   
-            >
+            'https://youtube.com/embed/' + cadastro.linkDorama.slice(17)}>
             </iframe>
             <Link to={`/Detalhe/${cadastro.id}`}><p>{cadastro.nomeDorama}</p></Link>
             <p>{cadastro.quantTemporadaDorama}</p>
@@ -26,5 +24,5 @@ export default function Card ({listaVideo}) {
         </div>
         
     )
-    )
+    );
 }

@@ -1,14 +1,16 @@
-import {Link} from "react-router-dom";
 import React from "react";
 import Header from "./Componentes/Header";
 import Card from "./Componentes/Card";
-const listaVideo = JSON.parse( localStorage.getItem ("ListaVideo")) || [];
+
 export default function Destaque(){
+    const destaque = JSON.parse( localStorage.getItem ("ListaVideo")) || [];
+    const montrarOsDestaque = destaque.slice(-2)
+    console.log(montrarOsDestaque)
     return(
       <div>
         
       <Header/>
-       <Card listaVideo = {listaVideo} />
+       <Card listaVideo = {montrarOsDestaque} />
       </div>
      );
 }

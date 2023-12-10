@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import '../style.css';
 
 export default function Cadastro() {
@@ -14,6 +14,8 @@ export default function Cadastro() {
    const [id,setId] = useState(listaVideoLocalStorage[listaVideoLocalStorage.length - 1]?.id + 1 || 1);
 
    useEffect (() => { localStorage.setItem("ListaVideo", JSON.stringify(listaVideo))}, [listaVideo]);
+
+   const navigate = useNavigate();
  
 
     const salvar =(e) =>{
@@ -29,6 +31,7 @@ export default function Cadastro() {
         setGeneroDorama("");
         setAutora("");
         setQuantEpDorama("");
+        navigate("/")
     };
 
 console.log(listaVideo)
