@@ -42,7 +42,7 @@ export default function Cadastro() {
     return (
         <div class = "center">
             <Link to="/">home</Link>
-            <h1 class = "titulo">Produtos Petshop</h1>    
+            <h1 class = "titulo">Videos Drama:</h1>    
             <form onSubmit={salvar}>
            
             <p class = "nome">Nome do Dorama:</p>
