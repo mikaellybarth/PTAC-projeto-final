@@ -16,13 +16,13 @@ export default function Cadastro() {
    useEffect (() => { localStorage.setItem("ListaVideo", JSON.stringify(listaVideo))}, [listaVideo]);
  
 
-   //const navigate = useNavigate();
+   const navigate = useNavigate();
  
 
-    const salvar =(e) =>{
+    const salvar = async(e) =>{
         e.preventDefault();
-        setListaVideo([...listaVideo, {
-            nomeDorama: nomeDorama, linkDorama: linkDorama, quantTemporadaDorama:quantTemporadaDorama, generoDorama: generoDorama, autora:autora, quantEpDorama:quantEpDorama,
+      await setListaVideo([...listaVideo, {
+            nomeDorama: nomeDorama, linkDorama: linkDorama, quantTemporadaDorama:quantTemporadaDorama, generoDorama: generoDorama, autora:autora, quantEpDorama:quantEpDorama, 
                 id: id
         }]);
         setId(id + 1);
@@ -32,7 +32,7 @@ export default function Cadastro() {
         setGeneroDorama("");
         setAutora("");
         setQuantEpDorama("");
-       // navigate("/")
+       navigate("/")
         console.log(nomeDorama)
     };
 
@@ -66,7 +66,7 @@ export default function Cadastro() {
             onChange={(e)=>{ setAutora(e.target.value)}}/>
 
            <p class = "nome"> Quant/Ep do Dorama:</p>
-           <input value={quantEpDorama} type="text"
+           <input value={quantEpDorama} type="number"
             onChange={(e)=>{ setQuantEpDorama(e.target.value)}}/>
 
            
